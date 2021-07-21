@@ -11,7 +11,9 @@ Api CRUD de carros, capaz de criar, deletar, editar e lista carros conforme soli
 </ul>
 
 <br><br><br>
+
 ## Tecnologias
+
 <ul>
 <li>Node.js</li>
 <li>Express</li>
@@ -54,31 +56,37 @@ Api CRUD de carros, capaz de criar, deletar, editar e lista carros conforme soli
 <br>
 
 ## Como usar
-
 <p>Com a api rodando, e o insomnia aberto podemos começar.</p>
 <ol>
 <li>Criar um novo resgistro de carro, use o metodo POST e a rota<code> http://localhost:8080/store/</code><p>O corpo da requisição deve ser feito em notação json, seguindo o seguinte pattern:</p> 
- {<br>
-	"brand" : String,<br>
-	"model" : String,<br>
-	"version" : String,<br>
-	"year" : Number,<br>
-	"mileage" : Number,<br>
-	"transmission" : String,<br>
-	"price" : Number<br>
-}<br><br>
-Exemplo:
-<br><br>
-{<br>
-	"brand" : "Fiat",<br>
-	"model" : "Uno",<br>
-	"version" : "Mile",<br>
-	"year" : 2008,<br>
-	"mileage" : 50000,<br>
-	"transmission" : "manual",<br>
-	"price" : 14000<br>
+
+```
+{
+	"brand" : String,
+	"model" : String,
+	"version" : String,
+	"year" : Number,
+	"mileage" : Number,
+	"transmission" : String,
+	"price" : Number
 }
-<br><br>
+```
+	
+	
+Exemplo:
+
+```
+{
+	"brand" : "Fiat",
+	"model" : "Uno",
+	"version" : "Mile",
+	"year" : 2008,
+	"mileage" : 50000,
+	"transmission" : "manual",
+	"price" : 14000
+}
+```
+
 caso uma dessas caracteristicas não seja preenchida, a api retornará erro(codigo 400), e um aviso de que a respectiva caracterista está faltando<br>
 caso tenha sucesso, retornará a propria requisição (codigo 200).
 </li><br>
@@ -88,17 +96,25 @@ caso tenha sucesso, retornará a propria requisição (codigo 200).
 <p>A api retornará o respectivo registro ou caso não exista, restornará erro 404.</p>
 </li><br>
 <li>Para editar qualquer carro registrado, use o metodo PUT e a rota:<br> <code>http://localhost:8080/store/update/id_do_registro_que_quer_editar</code> <br>exemplo <code>http://localhost:8080/store/update/60f77f4974180535acd75c01</code><br>
-use notação JSON no corpo da requisição com uma ou mais caracteristicas que quer editar:<br>
-{<br>
-	"caracteristica" : "nova informação",<br>
-	"caracteristica" : "nova informação",<br>
-}<br><br>
-Exemplo:<br><br>
-{<br>
-  "brand" : "ford",<br>
-	"model" : "fusion",<br>
-  "mileage" : 20000,<br>
-}<br><br>
+use notação JSON no corpo da requisição com uma ou mais caracteristicas que quer editar:
+	
+```
+{
+	"caracteristica" : "nova informação",
+	"caracteristica" : "nova informação"
+}
+```
+
+Exemplo:
+	
+```
+{
+  	"brand" : "ford",
+	"model" : "fusion",
+ 	"mileage" : 20000,
+}
+```
+	
 </li>
 <li>Para deletar qualquer carro, use o metodo DELETE e a rota:<br> <code>http://localhost:8080/store/delete/id_do_veiculo_que_sera_deletado</code> exemplo: <code>http://localhost:8080/store/delete/60f77f4974180535acd75c01</code>
 </li>
